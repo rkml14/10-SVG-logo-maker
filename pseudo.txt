@@ -1,0 +1,25 @@
+Shapes Info
+    -background color
+    - text and text color
+
+
+Circle 
+    Parent.Shapes
+    create Circle
+    render out the Parent.ShapesInfo
+
+ Triangle 
+    Parent.Shapes
+    create Triangle
+    render out the Parent.ShapesInfo
+
+ Square 
+    Parent.Shapes
+    create Square
+    render out the Parent.ShapesInfo        
+
+
+    Test Example:
+    const shape = new Triangle();
+shape.setColor("blue");
+expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
