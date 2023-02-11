@@ -23,3 +23,22 @@ Circle
     const shape = new Triangle();
 shape.setColor("blue");
 expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
+
+
+Function to pull which shape to render
+
+
+
+
+
+
+TESTS:
+test shape 
+test circle
+test triangle
+test square
+
+test error for 3 characters
+test error for text color
+test error for shape color
+
