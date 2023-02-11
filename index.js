@@ -4,6 +4,8 @@ const Circle = require('./lib/circle');
 const Square = require('./lib/square');
 const Triangle = require('./lib/triangle');
 
+
+
 const questions =
     [
         {
@@ -34,6 +36,14 @@ function writeToFile(fileName, data) {
         err ? console.log(err) : console.log("Generated logo.svg"))
 
 }
+function init() {
+    inquirer.prompt(questions)
+        .then((response) => {
+            shapeChoice();
+        })
+}
+
+
 
 function shapeChoice() {
     switch (shape) {
@@ -54,6 +64,16 @@ function shapeChoice() {
 
     }
 }
+
+
+// function init() {
+//     inquirer.prompt(questions)
+//     .then(response =>{
+//         console.log(response);
+//         const circle = new Circle(response.logo, response.textcolor, response.shapecolor);
+//         writeToFile('logo.svg', circle.render())
+//     }) 
+// }
 
 
 
@@ -89,12 +109,7 @@ function shapeChoice() {
 // }
 
 
-function init() {
-    inquirer.prompt(questions)
-        .then((response) => {
-            shapeChoice();
-        })
-}
+
 
 init();
 
