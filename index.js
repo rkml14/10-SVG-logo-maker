@@ -30,8 +30,6 @@ const questions =
     ]
 
 function writeToFile(fileName, data) {
-
-
     fs.writeFile(fileName, data, (err) =>
         err ? console.log(err) : console.log("Generated logo.svg"))
 
@@ -48,7 +46,7 @@ function writeToFile(fileName, data) {
 // }
 
 
-function shapeChoice(shape) {
+function shapeChoice() {
     if (shape === circle) {
         console.log(response);
         const circle = new Circle(response.logo, response.textcolor, response.shapecolor);
