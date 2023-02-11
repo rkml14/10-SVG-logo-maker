@@ -48,7 +48,7 @@ function shapeChoice(response) {
         case 'circle':
             const circle = new Circle(response.logo, response.textcolor, response.shapecolor);
             writeFile(
-                join(__dirname, '..', 'examples', 'logo.sgv'),
+                join(__dirname, '..', '10-SVG-logo-maker/examples', 'logo.sgv'),
                 circle.render())
             break;
         case 'triangle':
