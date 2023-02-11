@@ -3,7 +3,11 @@ const fs = require('fs');
 const Circle = require('./lib/circle');
 const Square = require('./lib/square');
 const Triangle = require('./lib/triangle');
+const { join } = require('path');
+const { writeFile } = require('fs/promises');
 
+// const path = require('path');
+// const filePath = path.join(__dirname, '/examples');
 
 
 const questions =
@@ -38,26 +42,33 @@ function writeToFile(fileName, data) {
 }
 
 
-
+//Function to take the response from the inquirer.prompt question, seek the response.shape out of the question array and using a switch statement, render the appropriate shape SGV.   case is a string, so need to make sure that I match to that out of the question array, and not try to declare it as a variable 
 function shapeChoice(response) {
     switch (response.shape) {
         case 'circle':
             const circle = new Circle(response.logo, response.textcolor, response.shapecolor);
-            writeToFile('logo.svg', circle.render())
+            writeFile(
+                join(__dirname, '..', 'examples', 'logo.sgv'),
+                circle.render())
             break;
-
         case 'triangle':
             const triangle = new Triangle(response.logo, response.textcolor, response.shapecolor);
             writeToFile('logo.svg', triangle.render())
             break;
-
         case 'square':
             const square = new Square(response.logo, response.textcolor, response.shapecolor);
             writeToFile('logo.svg', square.render())
             break;
-
     }
 }
+
+
+
+
+
+
+//     join(__dirname, '..', 'examples', 'logo.svg', circle.render()), 
+     // createDocument(this.title, this.tasks)  from mini project
 
 
 function init() {
@@ -69,37 +80,8 @@ function init() {
 
 init();
 
-// function init() {
-//     inquirer.prompt(questions)
-//     .then(response =>{
-//         console.log(response);
-//         const circle = new Circle(response.logo, response.textcolor, response.shapecolor);
-//         writeToFile('logo.svg', circle.render())
-//     })
-// }
 
 
-
-// function shapeChoice() {
-//     if (shape === circle) {
-//         console.log(response);
-//         const circle = new Circle(response.logo, response.textcolor, response.shapecolor);
-//         writeToFile('logo.svg', circle.render())
-//     }
-//     else {
-//         if (shape === square) {
-//             console.log(response);
-//             const square = new Square(response.logo, response.textcolor, response.shapecolor);
-//             writeToFile('logo.svg', square.render())
-//         }
-//         else {
-//             (shape === triangle)
-//             console.log(response);
-//             const triangle = new Triangle(response.logo, response.textcolor, response.shapecolor);
-//             writeToFile('logo.svg', triangle.render())
-//         }
-//     }
-// }
 
 
 // function init() {

@@ -22,7 +22,7 @@ SO THAT I don't have to pay a graphic designer
 ```md
 GIVEN a command-line application that accepts user input
 WHEN I am prompted for text  CREATED THIS PROMPT 
-THEN I can enter up to three characters CREATED THIS PROMPT BUT WE NEED TO CHECK FOR ERROR
+THEN I can enter up to three characters CREATED THIS PROMPT and we've checked for the error 
 WHEN I am prompted for the text color 
 THEN I can enter a color keyword (OR a hexadecimal number)  CREATED THIS   LIKELY NEED AN ERROR CHECK FOR NULL VALUE OR UNDEFINED
 WHEN I am prompted for a shape
@@ -35,7 +35,7 @@ AND the output text "Generated logo.svg" is printed in the command line THIS WOR
 WHEN I open the `logo.svg` file in a browser
 THEN I am shown a 300x200 pixel image that matches the criteria I entered
 ```
-NEXT: FUNCTION FOR TRIANGLE/SQUARE/CIRCLE  TO BE WRITTEN  
+NEXT: FUNCTION FOR TRIANGLE/SQUARE/CIRCLE  TO BE WRITTEN    this is done and works 
 
 NEXT: TESTING WRITEUPS
 
