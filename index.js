@@ -35,6 +35,49 @@ function writeToFile(fileName, data) {
 
 }
 
+function shapeChoice() {
+    switch (shape) {
+        case circle:
+            const circle = new Circle(response.logo, response.textcolor, response.shapecolor);
+            writeToFile('logo.svg', circle.render())
+            break;
+
+        case triangle:
+            const triangle = new Triangle(response.logo, response.textcolor, response.shapecolor);
+            writeToFile('logo.svg', triangle.render())
+            break;
+
+        case square:
+            const square = new Square(response.logo, response.textcolor, response.shapecolor);
+            writeToFile('logo.svg', square.render())
+            break;
+
+    }
+}
+
+
+
+// function shapeChoice() {
+//     if (shape === circle) {
+//         console.log(response);
+//         const circle = new Circle(response.logo, response.textcolor, response.shapecolor);
+//         writeToFile('logo.svg', circle.render())
+//     }
+//     else {
+//         if (shape === square) {
+//             console.log(response);
+//             const square = new Square(response.logo, response.textcolor, response.shapecolor);
+//             writeToFile('logo.svg', square.render())
+//         }
+//         else {
+//             (shape === triangle)
+//             console.log(response);
+//             const triangle = new Triangle(response.logo, response.textcolor, response.shapecolor);
+//             writeToFile('logo.svg', triangle.render())
+//         }
+//     }
+// }
+
 
 // function init() {
 //     inquirer.prompt(questions)
@@ -46,35 +89,14 @@ function writeToFile(fileName, data) {
 // }
 
 
-function shapeChoice() {
-    if (shape === circle) {
-        console.log(response);
-        const circle = new Circle(response.logo, response.textcolor, response.shapecolor);
-        writeToFile('logo.svg', circle.render())
-    }
-    else {
-        if (shape === square) {
-            console.log(response);
-            const square = new Square(response.logo, response.textcolor, response.shapecolor);
-            writeToFile('logo.svg', square.render())
-        }
-        else {
-            (shape === triangle)
-            console.log(response);
-            const triangle = new Triangle(response.logo, response.textcolor, response.shapecolor);
-            writeToFile('logo.svg', triangle.render())
-        }
-    }
-}
-
 function init() {
     inquirer.prompt(questions)
         .then((response) => {
-        shapeChoice(response);
-    })
-   }
+            shapeChoice();
+        })
+}
 
-   init();
+init();
 
 
 
