@@ -1,17 +1,20 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Circle = require('./lib/circle');
+const Square = require('./lib/Square');
+const Triangle = require('./lib/Triangle');
 
 const questions =
     [
         {
             type: 'input',
             message: 'Please enter up to 3 characters for your logo',
-            name: 'logoInitals',
+            name: 'logo',
         },
         {
             type: 'input',
             message: 'Please enter a color keyword or hexadecimal number for your TEXT colour:',
-            name: 'textColor',
+            name: 'textcolor',
         },
         {
             type: 'list',
@@ -22,7 +25,7 @@ const questions =
         {
             type: 'input',
             message: 'Please enter a color keyword or hexadecimal number for your SHAPE colour:',
-            name: 'shapeColor',
+            name: 'shapecolor',
         },
     ]
 
@@ -37,8 +40,10 @@ const questions =
 function init() {
     inquirer.prompt(questions)
     .then(response =>{
-        let readText = utils(response)
-        writeToFile('logo.svg', readText)
+        console.log(response);
+        const circle = new Circle(response.logo, response.textcolor, response.shapecolor);
+        // let readText = utils(response)
+        writeToFile('logo.svg', circle.render())
     }) 
 }
 
