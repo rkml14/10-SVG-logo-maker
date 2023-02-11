@@ -22,7 +22,7 @@ const questions =
             type: 'list',
             message: 'Please choose one of the following shapes:',
             name: 'shape',
-            choices: ['circle', 'triangle', 'square']
+            choices: ['circle', 'triangle', 'square'],
         },
         {
             type: 'input',
@@ -36,28 +36,22 @@ function writeToFile(fileName, data) {
         err ? console.log(err) : console.log("Generated logo.svg"))
 
 }
-function init() {
-    inquirer.prompt(questions)
-        .then((response) => {
-            shapeChoice();
-        })
-}
 
 
 
-function shapeChoice() {
-    switch (shape) {
-        case circle:
+function shapeChoice(response) {
+    switch (response.shape) {
+        case 'circle':
             const circle = new Circle(response.logo, response.textcolor, response.shapecolor);
             writeToFile('logo.svg', circle.render())
             break;
 
-        case triangle:
+        case 'triangle':
             const triangle = new Triangle(response.logo, response.textcolor, response.shapecolor);
             writeToFile('logo.svg', triangle.render())
             break;
 
-        case square:
+        case 'square':
             const square = new Square(response.logo, response.textcolor, response.shapecolor);
             writeToFile('logo.svg', square.render())
             break;
@@ -66,13 +60,22 @@ function shapeChoice() {
 }
 
 
+function init() {
+    inquirer.prompt(questions)
+        .then((response) => {
+            shapeChoice(response);
+        })
+}
+
+init();
+
 // function init() {
 //     inquirer.prompt(questions)
 //     .then(response =>{
 //         console.log(response);
 //         const circle = new Circle(response.logo, response.textcolor, response.shapecolor);
 //         writeToFile('logo.svg', circle.render())
-//     }) 
+//     })
 // }
 
 
@@ -105,13 +108,13 @@ function shapeChoice() {
 //         console.log(response);
 //         const circle = new Circle(response.logo, response.textcolor, response.shapecolor);
 //         writeToFile('logo.svg', circle.render())
-//     }) 
+//     })
 // }
 
 
 
 
-init();
+
 
 
 
