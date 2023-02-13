@@ -33,12 +33,12 @@ Function to pull which shape to render
 
 
 TESTS:
-test shape 
-test circle
-test triangle
-test square
+test shape done
+test circle done 
+test triangle done 
+test square done 
 
-test error for 3 characters
+test error for 3 characters done 
 test error for text color
 test error for shape color
 
