@@ -5,7 +5,7 @@ const Circle = require('./lib/circle');
 const Square = require('./lib/square');
 const Triangle = require('./lib/triangle');
 
-//Inquirier prompt of questions to the user for 3 characters, text colour, shape colour & shape choice 
+//Inquirer prompt of questions to the user for 3 characters, text colour, shape colour & shape choice 
 const questions =
     [
         {
@@ -15,7 +15,7 @@ const questions =
         },
         {
             type: 'input',
-            message: 'Please enter a color keyword or hexadecimal number for your TEXT colour:',  //may need failure check for colour
+            message: 'Please enter a VALID color keyword or VALID hexadecimal number for your TEXT colour:',  //may need failure check for colour
             name: 'textcolor',
         },
         {
@@ -26,10 +26,29 @@ const questions =
         },
         {
             type: 'input',
-            message: 'Please enter a color keyword or hexadecimal number for your SHAPE colour:', //may need failure check for colour
+            message: 'Please enter a VALID color keyword or VALID hexadecimal number for your SHAPE colour:', //may need failure check for colour
             name: 'shapecolor',
         },
     ]
+
+//trying to work out this function to test for hex code
+    function isValidHexaCode(response) {
+        // Regex to check valid hexadecimalColor_code 
+        let regex = new RegExp(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/);
+     
+        // if str is empty return false
+        if (response.textcolor == null || response.shapecolor == null) {
+            return "false";
+        }
+     
+        // Return true if the str matched the ReGex
+        if (regex.test(response.textcolor) == true && regex.test(response.shapecolor == true)) {
+            return "true";
+        }
+        else {
+            return "false";
+        }
+    }
 
 //WriteToFile function for shapeChoice function, along with message for successfully created logo 
 function writeToFile(fileName, data) {   
@@ -59,6 +78,7 @@ function shapeChoice(response) {
 function init() {
     inquirer.prompt(questions)
         .then((response) => {
+            isValidHexaCode(response);
             shapeChoice(response);
         })
 
