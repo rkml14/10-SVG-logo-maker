@@ -1,11 +1,11 @@
+//required libraries for application to run
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Circle = require('./lib/circle');
 const Square = require('./lib/square');
 const Triangle = require('./lib/triangle');
 
-
-
+//Inquirier prompt of questions to the user for 3 characters, text colour, shape colour & shape choice 
 const questions =
     [
         {
@@ -31,10 +31,10 @@ const questions =
         },
     ]
 
-function writeToFile(fileName, data) {   //need to figure out where to call this function
+//WriteToFile function for shapeChoice function, along with message for successfully created logo 
+function writeToFile(fileName, data) {   
     fs.writeFile(fileName, data, (err) =>
         err ? console.log(err) : console.log("Generated logo.svg"))
-
 }
 
 //Function to take the response from the inquirer.prompt question, seek the response.shape out of the question array and using a switch statement, render the appropriate shape SGV.   case is a string, so need to make sure that I match to that out of the question array, and not try to declare it as a variable   the logo will be created under the examples folder using writeFile 
@@ -55,6 +55,7 @@ function shapeChoice(response) {
     }
 }
 
+//init function, calls inquirer.prompt of questions, and uses the responses as the parameter for shapeChoice function 
 function init() {
     inquirer.prompt(questions)
         .then((response) => {
