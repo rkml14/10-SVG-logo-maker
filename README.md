@@ -35,6 +35,27 @@ Things I learned from this application:
 
   In the terminal, run the program via the command prompt: node index.js.  Respond to the prompted list of questions.
 
+A link to the video showing the tests running succesfully, as well as creation of 3 different logos along with the validation errors for inproper user input: https://drive.google.com/file/d/1sxktzVdVY9JZJNt9IkN_9_Cru-dAurbq/view
+
+
+Example of a successful answering of the inquirer prompts & the related SVG logo it produced:
+
+![answered-questions-and-the-created-logo-to-the-questions](./images/creation-of-svg-logo.png)
+
+
+Examples of the validation errors in the questions that prompt the user to enter valid information.
+
+Logo cannot be null:
+
+![logo-cannot-be-null ](./images/require-valid-logo.png)
+
+Text color must be valid:
+
+![text-colour-must-be-valid](./images/require-valid-colour.png)
+
+Hexadecimal code must be valid:
+
+![shape-colour-must-be-valid-hexadecimal-code](./images/require-valid-color-shape.png)
 
   ## License
 
@@ -51,6 +72,12 @@ Things I learned from this application:
 
   ## Test
 The application uses the Jest JavaScript Testing Framework for running the tests on the Shape, Circle, Triangle & Square classes. 
+
+Confirmation that the tests were run successfully:
+
+![confirmation-that-the-tests-were-successful](./images/test_success.png)
+
+
 
 
   ## Credits
