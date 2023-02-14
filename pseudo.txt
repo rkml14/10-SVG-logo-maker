@@ -43,8 +43,8 @@ test error for text color   STILL NEED A CHECK FOR VALID COLOR OR HEX NUMBER
 test error for shape color STILL NEED A CHECK FOR VALID COLOR OR HEX NUMBER
 
 
-Also, if anybody needs it, the regex to validate a hex code is /^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/
+the regex to validate a hex code is /^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/
 That will detect both the full 6-digit "#ddff33" and the 3-digit version "#55e".
-
+doesn't say it is required anywhere
 
 
